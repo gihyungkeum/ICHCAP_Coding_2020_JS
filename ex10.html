@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var coworkers = {
+        "programmer":"egoing",
+        "designer":"leezche"
+      };
+
+      document.write("programmer:" +coworkers.programmer+"<br>");
+      document.write("designer:" +coworkers.designer+"<br>");
+      coworkers.bookkeeper = "duru";
+      document.write("bookkeeper:"+coworkers.bookkeeper+"<br>")
+      coworkers["data scientist"] = "taeho";
+      document.write("data scientist:"+coworkers["data scientist"]+"<br>");
+    </script>
+    <h2>Iterate</h2>
+    <script>
+      for(var key in coworkers){
+        document.write(key+'<br>');
+      }
+      for(var key in coworkers){
+        document.write(coworkers[key]+'<br>');
+      }
+      for(var key in coworkers){
+        document.write(key+ ':' +coworkers[key]+'<br>');
+      }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+      coworkers.showAll = function(){
+   /*
+        for(var key in coworkers){
+          document.write(key+':'+coworkers[key]+'<br>');
+          }
+      */
+        for(var key in this){
+          document.write(key+':'+this[key]+'<br>');
+
+  //     for(var key in this){
+  //     if(key !="showAll"){
+  //     document.write(key+':'+this[key]+'<br>');
+  //        }
+  //       }  # if()문 사용하여, coworkers에 소속된 showAll 함수 표시 제거
+        }
+      }
+        coworkers.showAll();
+    </script>
+  </body>
+</html>
+
+
+-----------------------------------------------------------------
+<br>(검색) javascript object iterate....for(var key in object){}
+<br>함수정의 coworkers.showAll=function(){}..은 function showAll(){}과 같은 의미
+<br>showAll()함수 내 있는 coworkers가 다른곳에 있는 동일한 이름의 객체이와 충돌 가능성을 피하는 방법으로,
+<br>showAll() 함수 내에서 함수에 소속된 객체를 가르키는 약속된 기호 this를 사용
+<br> # javascript의 this가 해당함수 호출 패턴에 다라 객제참조하는 규칙
+   <ol>
+     <li> 기본적으로 this는 전역객체</li>
+     <li> 메소드 내부의 this는 해당 메소드를 호출한 부모객체를 참조</li>
+     <li> 생성자 함수 코드 내부의 this는 새로 생성된 객체를 참조</li>
+     <li> call()과 apply() 메소드로 함수를 호출할때, 함수의 this는 첫번째 인자로 넘겨받은 객체를 참조</li>
+     <li> 프로토타입 객체 메소드 내부의 this도 해당 메소드를 호출한 부모 객체를 참조</li>
+     <li> javascript의 this 키워드는 접근제어자 public 역할을 한다.</li>
+   </ol>
+
+
+
+<br>하지만 이경우 showAll도 coworkers에 소속된 대상이므로 함수까지표시되는 문제가 생김
+--> if 문 사용하여 제거방법 -->  if(key !="showAll"){} 추가
+
+ coworkers.showAll = function(){
+ for(var key in this){
+    <u> if(key !="showAll")</u> {
+     document.write(key+':'+this[key]+'<br>');
+      }
+    }
+  }
+
+<br>(용어) 객체에 소속된 함수는 메소드(method), 객체에 소속된 변수는 프로퍼티(property)

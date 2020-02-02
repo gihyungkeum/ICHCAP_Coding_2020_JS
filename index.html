@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>WEB2_JavaScript-Welcome</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="colors_1.js"></script>
+    <style>
+      .js{
+        font-weight: bold;
+        color: red;
+      }
+      #first{
+        color: green;
+      }
+      span{
+        color: blue;
+      }
+    </style>
+</head>
+
+<body>
+  <h1><a href="index.html">WEB2-javaScript</a></h1>
+
+  <input type="button" value="night" onclick="
+   nightDayHandler(this);
+  ">
+
+
+  <!--
+  <input type="button" value="night" onclick="
+   document.querySelector('body').style.backgroundColor='black';
+   document.querySelector('body').style.color='white';
+  ">
+   <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+  ">
+-->
+<!--
+  <ol>
+    <li><a href="1.html">HTML</a> </li>
+    <li><a href="2.html">CSS</a></li>
+    <li><a href="3.ntml">JavaScript</a></li>
+  </ol>
+-->
+  <ol>
+<!--   <li><a href="ex1.html">HTML</a> </li> -->
+    <li><a href="1.html">HTML</a> </li>
+
+<!--    <li><a href="ex2.html">CSS</a></li>  -->
+    <li><a href="2.html">CSS</a></li>
+
+<!--    <li><a href="ex3.html">JavaScript</a></li>  -->
+    <li><a href="3.html">JavaScript</a></li>
+  </ol>
+
+  <h2 style="background-color: coral;color:powderblue">JavaScript란 무엇인가</h2>
+  <p>
+    <span id="first" class="js">JavaScript</span> (/ˈdʒɑːvəˌskrɪpt/),[9] often abbreviated as JS, is a high-level, just-in-time compiled, multi-paradigm
+    programming language that conforms to the ECMAScript specification.[10] JavaScript has curly-bracket syntax, dynamic
+    typing, prototype-based object-orientation, and first-class functions.
+    Alongside <span>HTML</span> and <span>CSS</span>, JavaScript is one of the core technologies of the World Wide Web.[11] JavaScript enables
+    interactive web pages and is an essential part of web applications. The vast majority of websites use it,[12] and major
+    web browsers have a dedicated JavaScript engine to execute it.
+    As a multi-paradigm language, JavaScript supports event-driven, functional, and imperative (including object-oriented
+    and prototype-based) programming styles. It has APIs for working with text, arrays, dates, regular expressions, and the DOM,
+    but the language itself does not include any I/O, such as networking, storage, or graphics facilities. It relies upon
+    the host environment in which it is embedded to provide these features.
+  </p>
+# css [background color|color] property <br>
+# <div></div> 태그(block)와 <span></span> 태그(inline) <br>
+# Atom editor [파일|단어] 찾기 및 바꾸기 도구 여는 단축키: ctrl + F <br>
+# selector 우선순위 : id - class - tag - 동일 순위 선택자 간에는 최근접 선택자
+# (검색) javascript select tag by css selector ....: input > onclick 속
+# (검색) javascript element [tag] style ....body 태그내에 night 버튼 누를때  background-color ; red 넣은 경우 ..>style.backgroundColor='red';
+# (검색) ------------------ body 태그내에 day 버튼 누를때 foreground 컬러 넣는 경우..> style.color='white'
+# night, day 버튼 누를 때 마다 콘솔창에서 body 태그변경 확인 가능
+</body>
+
+</html>
